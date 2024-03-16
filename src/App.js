@@ -3,7 +3,6 @@ import Expenses from "./components/Expenses";
 import NewExpenses from "./components/NewExpense/NewExpense";
 
 function App() {
-  
   const [expenses, setExpenses] = useState([
     {
       id: "1",
