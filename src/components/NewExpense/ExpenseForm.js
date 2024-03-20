@@ -56,16 +56,16 @@ export default function ExpenseForm(props) {
         <form onSubmit={formSubmission}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" value={enteredTitle} onChange={titleHandler} />
+                    <label >Title</label>
+                    <input type="text"  value={enteredTitle} onChange={titleHandler} />
                 </div>
                 <div className="new-expense__control">
-                    <label for="price">Price</label>
-                    <input type="number" id="price" min="0.01" step="0.01" value={enteredPrice} onChange={priceHandler} />
+                    <label >Price</label>
+                    <input type="number"  min="0.01" step="0.01" value={enteredPrice} onChange={priceHandler} />
                 </div>
                 <div className="new-expense__control">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" min="2023-08-18" max="2024-03-15" value={enteredDate} onChange={dateHandler}/>
+                    <label >Date</label>
+                    <input type="date"  min="2023-08-18" max="2024-03-15" value={enteredDate} onChange={dateHandler}/>
                 </div>
             </div>
             <div className="new-expense__actions">

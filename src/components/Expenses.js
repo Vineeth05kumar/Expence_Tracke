@@ -1,12 +1,29 @@
+import React, { useState } from "react";
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
-
+import ExpenseForm from "./NewExpense/ExpenseForm";
+import ExpenseFilter from "./ExpensesFilter";
 export default function Expenses(props) {
-  const {expenses}= props;
+  const [filteredYear, setFilteredYear] = useState('2020');
+
+  const FilterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
+  const { expenses } = props;
+  
+  // Filter expenses based on the selected year
+  const filteredExpenses = expenses.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
    
   return (
     <div className="expenses">
-      {expenses.map((expense, index) => {
+      <ExpenseFilter
+        selected={filteredYear}
+        onChangeFilter={FilterChangeHandler}
+      />
+      {filteredExpenses.map((expense) => {
         return (
           <ExpenseItem
             key={expense.id}
@@ -14,9 +31,9 @@ export default function Expenses(props) {
             title={expense.title}
             price={expense.price}
             location={expense.location}
-          ></ExpenseItem>
+          />
         );
       })}
     </div>
   );
-}
+} 

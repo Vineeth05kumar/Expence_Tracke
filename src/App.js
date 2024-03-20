@@ -6,14 +6,14 @@ function App() {
   const [expenses, setExpenses] = useState([
     {
       id: "1",
-      date: new Date(2023, 7, 15),
+      date: new Date(2022, 7, 15),
       title: "Insurance",
       price: 100,
       location: "Bangalore",
     },
     {
       id: "2",
-      date: new Date(2023, 3, 25),
+      date: new Date(2021, 3, 25),
       title: "Book",
       price: 10,
       location: "Delhi",
@@ -38,7 +38,7 @@ function App() {
     const newExpense = {
       ...newExpenseData,
     };
-    setExpenses((prevExpenses) => [...prevExpenses, newExpense]);
+    setExpenses((prevExpenses) => [ newExpense, ...prevExpenses]);
   };
   return (
     <div>
