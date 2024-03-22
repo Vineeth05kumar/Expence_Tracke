@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "./ExpensesFilter";
+import ExpensesChart from './ExpensesChart';
 
 
 export default function Expenses(props) {
@@ -57,6 +58,7 @@ export default function Expenses(props) {
         selected={filteredYear}
         onChangeFilter={FilterChangeHandler}
       />
+      <ExpensesChart expenses={filteredExpenses}/>
       {expensesContent}
     </div>
   );

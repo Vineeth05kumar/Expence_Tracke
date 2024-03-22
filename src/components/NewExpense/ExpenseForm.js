@@ -65,10 +65,11 @@ export default function ExpenseForm(props) {
                 </div>
                 <div className="new-expense__control">
                     <label >Date</label>
-                    <input type="date"  min="2023-08-18" max="2024-03-15" value={enteredDate} onChange={dateHandler}/>
+                    <input type="date"  min="2019-08-18" max="2024-03-15" value={enteredDate} onChange={dateHandler}/>
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type="button" onClick={props.onCancel}>Cancel</button>
                 <button type="submit" >Add Expense</button>
             </div>
         </form>
